@@ -6,15 +6,8 @@ using namespace std;
 
 int main()
 {
-	int arr[]={10,20,100,40,50,500,8};
-	int n=sizeof(arr)/sizeof(arr[0]); //number of elements
-
-	// int res=arr[0];
-	/*for(int i=1;i<n;i++)
-		res=max(res,arr[i]);*/
-
-	int res=*max_element(arr,arr+n);
+	vector<int> v{10,20,100,40,50,500,8};
+	int res=*max_element(v.begin(),v.end());
 	cout<<res<<endl;
-
 	return 0;
 }
