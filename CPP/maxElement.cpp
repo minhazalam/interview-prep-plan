@@ -6,8 +6,13 @@ using namespace std;
 
 int main()
 {
-	vector<int> v{10,20,100,40,50,500,8};
-	int res=*max_element(v.begin(),v.end());
+	int arr[]={12,32,10,5};
+	int n=sizeof(arr)/sizeof(arr[0]);
+
+	int res=0;
+	res=accumulate(arr,arr+n,res);
+
+	
 	cout<<res<<endl;
 	return 0;
 }
