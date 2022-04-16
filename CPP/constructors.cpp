@@ -18,9 +18,9 @@ public:
 	}
 	void print()
 	{
-		cout<<"("<<x<<" "<<y<<endl;
+		cout<<"("<<x<<" "<<y<<")"<<endl;
 	}
-}
+};
 
 int main()
 {
@@ -28,7 +28,7 @@ int main()
 	p1.print();
 	p2.print();
 
-	Point *ptr = new int(1,6);
+	Point *ptr = new Point(1,6);
 	ptr->print();
 
 	return 0;
