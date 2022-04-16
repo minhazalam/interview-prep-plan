@@ -6,15 +6,13 @@ class Point
 private:
 	int x,y;
 public:
-	Point()
+	Point():x(0),y(0)
 	{
-		x=0;
-		y=0;
+		
 	}
-	Point(int x1,int y1)
+	Point(int x1,int y1):x(x1),y(y1)
 	{
-		x=x1;
-		y=y1;
+		
 	}
 	void print()
 	{
