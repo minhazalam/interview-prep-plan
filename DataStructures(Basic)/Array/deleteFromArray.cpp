@@ -78,6 +78,24 @@ void reverseArray(int arr[],int n)
 	}
 }
 
+/*Removes duplicate elements from an array and returns size of the array
+* Time complexity: O(n)
+* Aux space: O(1)*/
+
+int remDups(int arr[],int n)
+{
+	int res=1;
+	for(int i=1;i<n;i++)
+	{
+		if(arr[res-1]!=arr[i])
+		{
+			arr[res]=arr[i];
+			res++;
+		}
+	}
+	return res;
+}
+
 int main()
 {
 	int arr[]={3,8,12,15,16};
@@ -119,6 +137,6 @@ int main()
 		cout<<arr[i]<<endl;
 	}
 	cout<<endl;
-	
+
 	return 0;
 }
