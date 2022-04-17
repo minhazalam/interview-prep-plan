@@ -20,6 +20,18 @@ int deleteFromArray(int arr[],int n,int x)
 	return (n-1);
 }
 
+/*Return index of largest number*/
+int getLargest(int arr[],int n)
+{
+	int res=0;
+	for(int i=1;i<n;i++)
+	{
+		if(arr[i]>arr[res])
+			res=i;
+	}
+	return res;
+}
+
 int main()
 {
 	int arr[]={3,8,12,5,6};
@@ -42,6 +54,9 @@ int main()
 		cout<<arr[i]<<endl;
 	}
 	cout<<endl;
+
+	int idx=getLargest(arr,n);
+	cout<<"Largest element in the array : "<<arr[idx]<<endl;
 
 	return 0;
 }
