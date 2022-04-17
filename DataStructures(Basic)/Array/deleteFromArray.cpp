@@ -13,6 +13,7 @@ int deleteFromArray(int arr[],int n,int x)
 	if(i==n)
 		return n;
 	
+	// start copying from the val->index
 	for(int j=i;j<n-1;j++)
 	{
 		arr[i]=arr[i+1];
