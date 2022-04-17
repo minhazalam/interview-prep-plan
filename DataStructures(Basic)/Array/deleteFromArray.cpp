@@ -32,9 +32,19 @@ int getLargest(int arr[],int n)
 	return res;
 }
 
+bool isSorted(int arr[],int n)
+{
+	for(int i=1;i<n;i++)
+	{
+		if(arr[i]<arr[i-1])
+			return false;
+	}
+	return true;
+}
+
 int main()
 {
-	int arr[]={3,8,12,5,6};
+	int arr[]={3,8,12,15,16};
 	int n=sizeof(arr)/sizeof(arr[0]);
 	cout<<"\nBefore Deletion: "<<endl;
 	for(int i=0;i<n;i++)
@@ -58,5 +68,7 @@ int main()
 	int idx=getLargest(arr,n);
 	cout<<"Largest element in the array : "<<arr[idx]<<endl;
 
+	bool res=isSorted(arr,n)?true:false;
+	cout<<"Array sorted? - "<<res<<endl;
 	return 0;
 }
