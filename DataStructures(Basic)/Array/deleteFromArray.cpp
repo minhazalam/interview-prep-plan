@@ -63,6 +63,21 @@ bool isSorted(int arr[],int n)
 	return true;
 }
 
+void reverseArray(int arr[],int n)
+{
+	int low=0;
+	int high=n-1;
+
+	while(low<high)
+	{
+		int temp=arr[low];
+		arr[low]=arr[high];
+		arr[high]=temp;
+		low++;
+		high--;
+	}
+}
+
 int main()
 {
 	int arr[]={3,8,12,15,16};
@@ -94,5 +109,16 @@ int main()
 
 	int sec_idx=getSecondLargest(arr,n);
 	cout<<"Second largest number : "<<arr[sec_idx]<<endl;
+
+	cout<<endl;
+
+	cout<<"Reversed Array: "<<endl;
+	reverseArray(arr,n);
+	for(int i=0;i<n;i++)
+	{
+		cout<<arr[i]<<endl;
+	}
+	cout<<endl;
+	
 	return 0;
 }
