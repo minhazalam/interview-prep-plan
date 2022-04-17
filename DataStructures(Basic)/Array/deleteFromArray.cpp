@@ -8,7 +8,7 @@ int deleteFromArray(int arr[],int n,int x)
 	{
 		if(arr[i]==x)
 			break;
-	}
+	} //i -> index of x
 
 	if(i==n)
 		return n;
@@ -28,6 +28,27 @@ int getLargest(int arr[],int n)
 	{
 		if(arr[i]>arr[res])
 			res=i;
+	}
+	return res;
+}
+
+/*Return index of second largest number in an array*/
+int getSecondLargest(int arr[],int n)
+{
+	int largest=0,res=-1;
+
+	for(int i=1;i<n;i++)
+	{
+		if(arr[i]>arr[largest])
+		{
+			res=largest;
+			largest=i;
+		}
+		else if(arr[i]!=arr[largest])
+		{
+			if(res==-1||arr[i]>arr[res])
+				res=i;
+		}
 	}
 	return res;
 }
@@ -70,5 +91,8 @@ int main()
 
 	bool res=isSorted(arr,n)?true:false;
 	cout<<"Array sorted? - "<<res<<endl;
+
+	int sec_idx=getSecondLargest(arr,n);
+	cout<<"Second largest number : "<<arr[sec_idx]<<endl;
 	return 0;
 }
