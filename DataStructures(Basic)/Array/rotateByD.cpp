@@ -29,7 +29,10 @@ int main()
 		cout<<arr[i]<<" ";
 	cout<<endl;
 	cout<<"After rotation: "<<endl;
-	leftRotateByD(arr,n,3);
+	cout<<"Enter d: ";
+	int d;
+	cin>>d;
+	leftRotateByD(arr,n,d);
 	for(int i=0;i<n;i++)
 		cout<<arr[i]<<" ";
 	cout<<endl;
