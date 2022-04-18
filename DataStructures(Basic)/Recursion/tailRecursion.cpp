@@ -3,13 +3,14 @@
 #include <iostream>
 using namespace std;
 
-void fun(int n)
+void fun(int n,int k=1)
 {
 	// base case
 	if(n==0)
 		return;
-	fun(n-1);
-	cout<<n<<endl;
+	cout<<k<<endl;
+	fun(n-1,k+1);
+	// cout<<n<<endl;
 }
 
 int main()
