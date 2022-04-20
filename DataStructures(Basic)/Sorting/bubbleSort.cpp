@@ -17,6 +17,23 @@ void bubbleSort(int arr[],int n)
 		}
 	}
 }
+
+/*Selection sort*/
+// increasing order
+void selecttionSort(int arr[],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		int min_idx=i;
+		for(int j=i+1;j<n;j++)
+		{
+			if(arr[j]<arr[min_idx])
+				min_idx=j;
+		}
+		swap(arr[min_idx],arr[i]);
+	}
+}
+
 void display(int arr[],int n)
 {
 	for(int i=0;i<n;i++)
@@ -31,7 +48,8 @@ int main()
 	cout<<"Before sorting : "<<endl;
 	display(arr,n);
 
-	bubbleSort(arr,n);
+	// bubbleSort(arr,n);
+	selecttionSort(arr,n);
 	cout<<endl;
 	cout<<"After sorting : "<<endl;
 	display(arr,n);
