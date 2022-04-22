@@ -18,6 +18,18 @@ void bubbleSort(int arr[],int n)
 	}
 }
 
+// MERGESORT
+void mergerSort(int arr[],int l,int r)
+{
+	if(r>l)//atleast 2 elements
+	{
+		int m=l+(r-l)/2;
+		mergerSort(arr,l,m);
+		mergerSort(arr,m+1,r);
+		merge(arr,l,m,r);
+	}
+}
+
 /*Selection sort*/
 // increasing order
 void selecttionSort(int arr[],int n)
