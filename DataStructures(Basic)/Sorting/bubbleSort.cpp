@@ -18,6 +18,33 @@ void bubbleSort(int arr[],int n)
 	}
 }
 
+void merge(int arr[],int l,int m,int r)
+{
+	// copy to left and right temp arrays
+	int n1=m-l+1; int left[n1];
+	int n2=r-l; int right[n2];
+	for(int i=0;i<n1;i++)
+		left[i]=arr[l+i];
+	for(int i=0;i<n2;i++)
+		right[i]=arr[m+i+1];
+
+	int i=0;
+	int j=0;
+	int k=l;
+	while(i<n1 && j<n2)
+	{
+		if(left[i]<=right[j])
+			arr[k++]=left[i++];
+		else
+			arr[k++]=right[j++];
+	}
+	while(i<n1)
+		arr[k++]=left[i++];
+	while(j<n2)
+		arr[k++]=right[j++];
+
+}
+
 // MERGESORT
 void mergerSort(int arr[],int l,int r)
 {
@@ -54,17 +81,24 @@ void display(int arr[],int n)
 
 int main()
 {
-	int arr[]={20,12,32,31,9,78};
-	int n=sizeof(arr)/sizeof(arr[0]);
+	// int arr[]={20,12,32,31,9,78};
+	// int n=sizeof(arr)/sizeof(arr[0]);
 
-	cout<<"Before sorting : "<<endl;
-	display(arr,n);
+	// cout<<"Before sorting : "<<endl;
+	// display(arr,n);
 
-	// bubbleSort(arr,n);
-	selecttionSort(arr,n);
-	cout<<endl;
-	cout<<"After sorting : "<<endl;
-	display(arr,n);
+	// // bubbleSort(arr,n);
+	// selecttionSort(arr,n);
+	// cout<<endl;
+	// cout<<"After sorting : "<<endl;
+	// display(arr,n);
+	// cout<<endl;
+
+	int a[]={10,5,30,15,7};
+	int l=0,r=4;
+	mergerSort(a,l,r);
+	for(int x:a)
+		cout<<x<<" ";
 	cout<<endl;
 
 	return 0;
