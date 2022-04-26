@@ -112,6 +112,10 @@ int naivePartition(int arr[],int l,int h,int p)
 	int res; //index of pivot element
 }
 
+int lomutoPartition()
+{
+	
+}
 void display(int arr[],int n)
 {
 	for(int i=0;i<n;i++)
