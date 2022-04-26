@@ -74,7 +74,7 @@ void selecttionSort(int arr[],int n)
 }
 
 // partition function for quick sort
-int partition(int arr[],int l,int h,int p)
+int naivePartition(int arr[],int l,int h,int p)
 {
 	int temp[h-l+1];
 	int index=0;
