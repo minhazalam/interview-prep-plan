@@ -73,6 +73,45 @@ void selecttionSort(int arr[],int n)
 	}
 }
 
+// partition function for quick sort
+int partition(int arr[],int l,int h,int p)
+{
+	int temp[h-l+1];
+	int index=0;
+
+	for(int i=l;i<=h;i++)
+	{
+		if(arr[i]<arr[p])
+		{
+			temp[index]=arr[i];
+			index++;
+		}
+	}
+	for(int i=l;i<=h;i++)
+	{
+		if(arr[i]==arr[p])
+		{
+			temp[index]=arr[i];
+			index++;
+		}
+	}
+	for(int i=l;i<=h;i++)
+	{
+		if(arr[i]>arr[p])
+		{
+			temp[index]=arr[i];
+			index++;
+		}
+	}
+	int res=l+index-1;
+	for(int i=l;i<=h;i++)
+	{
+		arr[i]=temp[i-l];
+	}
+
+	int res; //index of pivot element
+}
+
 void display(int arr[],int n)
 {
 	for(int i=0;i<n;i++)
