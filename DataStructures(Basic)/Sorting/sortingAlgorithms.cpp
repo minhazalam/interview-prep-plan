@@ -128,6 +128,7 @@ int lomutoPartition(int arr[],int l,int h)
 	return (i+1);
 }
 
+// Hoares partiotion is much effiecient and faster than lomutos
 int hoaresPartition(int arr[],int l,int h)
 {
 	int pivot=arr[l];
