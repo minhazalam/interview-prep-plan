@@ -14,7 +14,7 @@ struct Node
 };
 
 // To traverse the single linked list
-void printList(Node *head)
+void iPrintList(Node *head)
 {
 	Node *curr=head;
 	while(curr!=NULL)
@@ -24,13 +24,27 @@ void printList(Node *head)
 	}
 }
 
+void rPrintList(Node *head)
+{
+	if(head==NULL)
+	{
+		return;
+	}
+	cout<<head->data<<" ";
+	rPrintList(head->next);
+}
 int main()
 {
 	Node *head=new Node(10);
 	head->next=new Node(20);
 	head->next->next=new Node(30);
 	head->next->next->next=new Node(40);
+	printf("Iterative traversal....");
+	iPrintList(head);
 
-	printList(head);
+	printf("\n");
+
+	printf("Recurssive traversal....");
+	rPrintList(head);
 	return 0;
 }
