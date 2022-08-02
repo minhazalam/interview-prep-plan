@@ -33,6 +33,26 @@ void rPrintList(Node *head)
 	cout<<head->data<<" ";
 	rPrintList(head->next);
 }
+
+// Serach in a linked list
+int iSearch(Node *head, int key)
+{
+	int pos=1;
+	Node *curr=head;
+	while(curr!=NULL)
+	{
+		if(curr->data==key)
+		{
+			return pos;
+		}
+		else
+		{
+			pos++;
+			curr=curr->next;
+		}
+	}
+	return -1;
+}
 int main()
 {
 	Node *head=new Node(10);
@@ -46,5 +66,7 @@ int main()
 
 	printf("Recurssive traversal....");
 	rPrintList(head);
+
+	cout<<"\nElement present at "<<iSearch(head,11)<<endl;
 	return 0;
 }
