@@ -53,6 +53,26 @@ int iSearch(Node *head, int key)
 	}
 	return -1;
 }
+int rSearch(Node *head,int key)
+{
+	if(head==NULL)
+	{
+		return -1;
+	}
+	if(head->data==key)
+	{
+		return 1;
+	}
+	else
+	{
+		int res=rSearch(head->next,key);
+		if(res==-1)
+		{
+			return res;
+		}
+		return res+1;
+	}
+}
 int main()
 {
 	Node *head=new Node(10);
@@ -67,6 +87,6 @@ int main()
 	printf("Recurssive traversal....");
 	rPrintList(head);
 
-	cout<<"\nElement present at "<<iSearch(head,11)<<endl;
+	cout<<"\nElement present at "<<rSearch(head,30)<<endl;
 	return 0;
 }
