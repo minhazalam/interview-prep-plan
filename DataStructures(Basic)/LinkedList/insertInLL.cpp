@@ -53,6 +53,27 @@ Node *deleteBegin(Node *head)
     }
 }
 
+// Delete a node at the end of linked list
+Node *deleteEnd(Node *head){
+    if(head==NULL)
+    {
+        return NULL;
+    }
+    if(head->next==NULL)
+    {
+        delete head;
+        return NULL;
+    }
+    Node *curr=head;
+    while(curr->next->next!=NULL)
+    {
+        curr=curr->next;
+    }
+    delete (curr->next);
+    curr->next=NULL;
+    return head;
+}
+
 void printList(Node *head)
 {
     while(head!=NULL)
@@ -78,5 +99,6 @@ int main()
     head=deleteBegin(head);
     printf("\n...After deletion...\n");
     printList(head);
+
     return 0;
 }
