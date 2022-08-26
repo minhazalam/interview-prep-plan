@@ -12,6 +12,7 @@ struct Node
     }
 };
 
+// Approach - O(n); n=number of nodes in a given linked list.
 Node *insertBeginCircularLinkedList(Node *head,int x)
 {
     Node *temp=new Node(x);
@@ -31,6 +32,30 @@ Node *insertBeginCircularLinkedList(Node *head,int x)
         temp->next=head;
     }
     return temp;
+}
+
+// Approach - O(1);
+Node *insertBeginCircularLinkedListEfficient(Node *head,int x)
+{
+    Node *temp=new Node(x);
+    
+    // NULL LinkedList Check
+    if(head==NULL)
+    {
+        temp->next=temp;
+        return temp;
+    }
+    else
+    {
+        temp->next=head->next;
+        head->next=temp;
+
+        int t=head->data;
+        head->data=temp->data;
+        temp->data=t;
+
+        return head;
+    }
 }
 
 void printCircularLinkedListDoWhile(Node *head)
@@ -56,7 +81,8 @@ int main()
     head->next->next->next->next=new Node(50);
     head->next->next->next->next->next=head;
 
-    head=insertBeginCircularLinkedList(head,15);
+    // head=insertBeginCircularLinkedList(head,15);
+    head=insertBeginCircularLinkedListEfficient(head,23);
     printCircularLinkedListDoWhile(head);
 
     cout<<endl;
