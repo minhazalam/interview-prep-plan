@@ -43,6 +43,15 @@ void postorderTraversal(Node *root)
     }
 }
 
+int heightBinaryTree(Node *root)
+{
+    if (root==NULL)
+    {
+        return 0;
+    }
+    return max(heightBinaryTree(root->left),heightBinaryTree(root->right))+1;
+}
+
 int main()
 {
     Node *root=new Node(10);
@@ -58,6 +67,8 @@ int main()
 
     cout<<"\n";
     cout<<"Postorder Traversal: ";postorderTraversal(root);
+
+    cout<<"\nHeight of Binary Tree: "<<heightBinaryTree(root)<<endl;
 
     cout<<endl;
     return 0;
